@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lease Confirmation</title>
+</head>
+<body>
+<h1>Lease Confirmation</h1>
+<div>
+    <h2>Car: <span th:text="${selectedVehicle.brand + ' ' + selectedVehicle.model}"></span></h2>
+    <p>Frame Number: <span th:text="${selectedVehicle.frameNumber}"></span></p>
+    <p>Start Date: <span th:text="${startDate}"></span></p>
+    <p>End Date: <span th:text="${endDate}"></span></p>
+    <p>Total Price: <span th:text="${totalPriceRent}"></span></p>
+    <p>Customer: <span th:text="${customerName}"></span></p>
+</div>
+<form action="/createLeaseContractConfirmed" method="post">
+    <button type="submit">Confirm Lease Contract</button>
+</form>
+<a href="/lease">Back to Lease Creation</a>
+<a href="/home">Back to Home</a>
+</body>
+</html>

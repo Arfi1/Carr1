@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BA</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        .header {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 80%; /* Increase the size of the logo */
+            max-width: 500px; /* Set a maximum width for the logo */
+            margin: 0 auto; /* Center the logo */
+            display: block; /* Make the logo a block element */
+        }
+
+        .employeeLogin-button {
+            background-color: #333; /* Darker button */
+            color: #fff; /* White text */
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid #fff; /* White border */
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .employeeLogin-button:hover {
+            background-color: #555; /* Slightly lighter on hover */
+            border-color: #ddd; /* Light border on hover */
+        }
+
+        .car-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .car-info {
+            margin: 20px;
+            flex: 1; /* Allow the car-info to take up available space */
+        }
+
+        .car-title {
+            font-size: 2em;
+            color: #fff; /* White text */
+        }
+
+        .car-slogan {
+            font-size: 1.2em;
+            color: #ccc; /* Light grey text */
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 720px; /* Adjust the maximum width */
+            overflow: hidden;
+            margin: 20px; /* Centered horizontally */
+            flex: 1; /* Allow the carousel to take up available space */
+        }
+
+        .carousel .car-pic {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel .car-pic.active {
+            opacity: 1;
+        }
+
+        @keyframes slide {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            33% { opacity: 1; }
+            53% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .carousel .car-pic:nth-child(1) {
+            animation: slide 18s infinite;
+            animation-delay: 0s;
+        }
+
+        .carousel .car-pic:nth-child(2) {
+            animation: slide 18s infinite;
+            animation-delay: 3s;
+        }
+
+        .carousel .car-pic:nth-child(3) {
+            animation: slide 18s infinite;
+            animation-delay: 6s;
+        }
+
+        .carousel .car-pic:nth-child(4) {
+            animation: slide 18s infinite;
+            animation-delay: 9s;
+        }
+
+        .carousel .car-pic:nth-child(5) {
+            animation: slide 18s infinite;
+            animation-delay: 12s;
+        }
+
+        .carousel .car-pic:nth-child(6) {
+            animation: slide 18s infinite;
+            animation-delay: 15s;
+        }
+
+        .footer {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a th:href="@{/employeeLogin}" class="employeeLogin-button">Employee Login</a>
+</div>
+
+<div class="car-section">
+    <div class="carousel">
+        <img src="/static/images/car.img" alt="Car Image 1" class="car-pic active">
+        <img src="/images/car.img" alt="Car Image 2" class="car-pic">
+        <img src="/images/car.img" alt="Car Image 3" class="car-pic">
+        <img src="/images/car.img" alt="Car Image 4" class="car-pic">
+        <img src="/images/car.img" alt="Car Image 5" class="car-pic">
+        <img src="/images/car.img" alt="Car Image 6" class="car-pic">
+    </div>
+    <div class="car-info">
+        <h2 class="car-title">BILABONNEMENT</h2>
+        <img class="logo" src="/images/Car-Logo1.jpg" alt="Logo">
+        <p class="car-slogan">"Unleash Your Drive, Fuel Your Potential!"</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2024 BA - BilAbonnement. All rights reserved.</p>
+</div>
+
+</body>
+</html>

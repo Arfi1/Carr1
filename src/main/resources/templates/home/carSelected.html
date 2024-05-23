@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Selected</title>
+</head>
+<body>
+<h1>Car Selected</h1>
+<div th:if="${selectedVehicle != null}">
+    <h2 th:text="${selectedVehicle.brand + ' ' + selectedVehicle.model}"></h2>
+    <p>Frame Number: <span th:text="${selectedVehicle.frameNumber}"></span></p>
+    <p>Color: <span th:text="${selectedVehicle.color}"></span></p>
+    <p>Price: <span th:text="${selectedVehicle.price}"></span></p>
+</div>
+<form action="/lease" method="get">
+    <button type="submit">Proceed to Lease</button>
+</form>
+<a href="/createContract">Choose another car</a>
+<a href="/home">Back to Home</a>
+</body>
+</html>

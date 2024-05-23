@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Leases</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>View Lease Contracts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Contract ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Price</th>
+        <th>Vehicle Number</th>
+        <th>Customer ID</th>
+        <th>Lease Type</th>
+        <th>Is Paid</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="lease : ${leases}">
+        <td th:text="${lease.contractId}"></td>
+        <td th:text="${lease.startDate}"></td>
+        <td th:text="${lease.endDate}"></td>
+        <td th:text="${lease.price}"></td>
+        <td th:text="${lease.vehicle != null ? lease.vehicle.vehicleNumber : 'N/A'}"></td>
+        <td th:text="${lease.customer != null ? lease.customer.customerId : 'N/A'}"></td>
+        <td th:text="${lease.leaseType}"></td>
+        <td th:text="${lease.isPaid}"></td>
+    </tr>
+    </tbody>
+</table>
+<p>Total Rent Price: <span th:text="${totalPriceRent}"></span></p>
+<a th:href="@{/menu}">Back to Home</a>
+</body>
+</html>

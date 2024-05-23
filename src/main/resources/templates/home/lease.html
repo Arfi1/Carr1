@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Lease</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Create Lease Contract</h1>
+<form th:action="@{/createLeaseContract}" method="post">
+    <input type="hidden" name="username" th:value="${username}">
+    <input type="hidden" name="vehicleNumber" th:value="${selectedVehicle.vehicleNumber}">
+    <div>
+        <label for="customer">Customer:</label>
+        <select id="customer" name="customerId">
+            <option value="">Select a customer</option>
+            <th:block th:each="customer : ${customers}">
+                <option th:value="${customer.customerId}" th:text="${customer.firstName + ' ' + customer.lastName}"></option>
+            </th:block>
+        </select>
+    </div>
+    <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+    </div>
+    <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+    </div>
+    <div>
+        <label for="leaseType">Lease Type:</label>
+        <select id="leaseType" name="leaseType">
+            <option th:each="type : ${leaseTypes}" th:value="${type}" th:text="${type}"></option>
+        </select>
+    </div>
+    <button type="submit">Create Lease Contract</button>
+</form>
+<a th:href="@{/createContract}">Choose another car</a>
+<a th:href="@{/menu}">Back to Home</a>
+</body>
+</html>
